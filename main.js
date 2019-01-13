@@ -7,15 +7,16 @@ let money,
  startShop();
 
 
+
 let mainList = {
 	budzhet : money,
 	name : izena,
 	shopGoods : [],
 	employers : {},
 	open : false,
-	discount : false
+	discount : true
 }
-
+ calculateBudget(calculateDiscount);
  // startShop(); объект уже инициализирован и свойства не добавяться
 
 
@@ -44,9 +45,18 @@ function gehituProduct() {
 	}
 }
 
-// gehituProduct();
+function calculateBudget(callback) {
+	prise = mainList.budzhet / 30;
+	callback();
+}
 
-console.log(mainList);
+function calculateDiscount() {
+	if (true == mainList.discount) {
+		prise = prise / 100 * 80;
+	}
+}
+
+console.log(prise);
 
 // let days = document.querySelectorAll('#week');
 // let week = ['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье'];
@@ -59,18 +69,15 @@ console.log(mainList);
 // 	days[i].innerHTML = week[i];
 // }
 
-let num = [45,32,754,147,356,89,444];
-for(let i = 0; i<num.length; i++){
-	let str = num[i] + '';
-	if('3' == str[0]){
-		console.log(num[i]);
-	}
-}
+// let num = [45,32,754,147,356,89,444];
+// for(let i = 0; i<num.length; i++){
+// 	let str = num[i] + '';
+// 	if('3' == str[0]){
+// 		console.log(num[i]);
+// 	}
+// }
 
 
-	
-
-// console.log(mainList.aurr / 30);
 
 // alert( typeof(+"Infinity") ); 
 // alert([ ] + false - null + true )
