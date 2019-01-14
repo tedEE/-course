@@ -4,7 +4,7 @@ let money,
 	izena,
 	prise;
 
- startShop();
+ // startShop();
 
 
 
@@ -16,7 +16,7 @@ let mainList = {
 	open : false,
 	discount : true
 }
- calculateBudget(calculateDiscount);
+ // calculateBudget(calculateDiscount);
  // startShop(); объект уже инициализирован и свойства не добавяться
 
 
@@ -56,7 +56,16 @@ function calculateDiscount() {
 	}
 }
 
-console.log(prise);
+function addEmployers() {
+	for(let i = 1; i<=4; i++){
+		let name = prompt('Напишите имя сотрудника');
+		mainList.employers[i] = name;
+	}
+}
+
+// addEmployers()
+
+console.log(mainList);
 
 // let days = document.querySelectorAll('#week');
 // let week = ['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье'];
